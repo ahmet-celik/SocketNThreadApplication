@@ -28,9 +28,9 @@ public class Client {
 
 	          int c;
 	          while ( (c = inputStream.read()) != 10)// 10 is unix style newline
-	             sb.append( (char) c);
-	          connection.close();
+	             sb.append( (char) c);          
 	          System.out.println("Response from server: "+sb);
+	          connection.close();
 	    }catch (Exception g) {
 	          System.out.println("Exception: " + g);
 	        

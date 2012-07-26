@@ -12,9 +12,9 @@ public class SingleThreadServer {
 	    try{
 	      System.out.println("SingleThreadServer Initialized");
 	      int c;
-
+		  ServerSocket socket = new ServerSocket(port);
 	      while (true) {
-	        connection =  new ServerSocket(port).accept();
+	        connection =  socket.accept();
 
 	        InputStreamReader inputStream = new InputStreamReader(new BufferedInputStream(connection.getInputStream()));
 	        

@@ -11,14 +11,14 @@ public class MultiThreadServer implements Runnable {
 	  this.ID = i;
    }
   
-  
   public static void main(String[] args) {
 	  int port = 11907;
 	  int count = 0;
 	  try{
 		  System.out.println("MultipleThreadServer started...");
+		  ServerSocket socket = new ServerSocket(port);
 		  while (true) {
-	    		Socket connection = new ServerSocket(port).accept();
+	    		Socket connection = socket.accept();
 	    		new Thread(new MultiThreadServer(connection, ++count)).start();	    		
     	  }
      }
